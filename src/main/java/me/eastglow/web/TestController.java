@@ -24,6 +24,7 @@ public class TestController {
 	public Object index(Model model) throws Exception {
 		Map<String, Object> result = new HashMap<>();
 		result.put("testList", testSvc.getTestList());
+
 		return result;	
 	}
 }
