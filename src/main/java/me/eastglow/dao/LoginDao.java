@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 public class LoginDao {
 
 	 public void insertToken(String authorize_code) {
-		 
+		//hash 삽
 	 }
 }
