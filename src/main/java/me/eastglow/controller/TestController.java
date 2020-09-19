@@ -1,4 +1,4 @@
-package me.eastglow.web;
+package me.eastglow.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,12 +19,11 @@ public class TestController {
 	@Resource
 	private TestService testSvc;
 	
-	@RequestMapping(value="/index", method=RequestMethod.GET)
+	@RequestMapping(value="/test", method=RequestMethod.GET)
 	@ResponseBody
 	public Object index(Model model) throws Exception {
 		Map<String, Object> result = new HashMap<>();
 		result.put("testList", testSvc.getTestList());
-
 		return result;	
 	}
 }
