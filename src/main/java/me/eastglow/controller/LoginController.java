@@ -1,11 +1,17 @@
 package me.eastglow.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import me.eastglow.service.impl.LoginServiceImpl;
 
@@ -38,6 +44,19 @@ public class LoginController {
     	//세션 등록
     	session.setAttribute("userId", appUserId);
     	session.setAttribute("accessToken", accessToken);
-    	return "index";
+    	return "home";
 	}
+	
+	/*
+	 * des : 프로필 조회.
+	 */
+	@RequestMapping(value="/profile", method = RequestMethod.GET)
+	@ResponseBody
+	public Object getProfile(HttpServletRequest req) throws Exception{
+		
+		Map<String, Object> result = new HashMap<>();
+		result.put("profile", login.getProfile(req.getParameter("id")));
+		return result;	
+	}
+	
 }

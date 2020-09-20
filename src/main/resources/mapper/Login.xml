@@ -24,11 +24,18 @@
 		VALUES
 			(#{appUserId}, #{nickName}, #{accessToken}, #{refreshToken}, now())			  
 	</insert>
-	<!-- insert id="insertUser" parameterType="map">
-		INSERT
-	 	INTO
-	 		api_call(api_type, api_date)
-		VALUES
-			(#{apiType}, now())
-	</insert> -->
+
+<!--
+	/*
+	 * des : 프로필 조회.
+	 */
+-->	
+	<select id="getProfile" parameterType="map" resultType="me.eastglow.vo.User">
+		SELECT 
+			APP_USER_ID, NICKNAME
+		FROM 
+			USER
+		WHERE
+			APP_USER_ID = #{id}
+	</select>
 </mapper>

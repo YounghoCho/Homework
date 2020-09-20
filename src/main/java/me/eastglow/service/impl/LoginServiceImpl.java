@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
+
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import com.google.gson.JsonElement;
@@ -14,6 +16,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import me.eastglow.dao.LoginDao;
 import me.eastglow.service.LoginService;
+import me.eastglow.vo.User;
 
 /*
  * des : 카카오 로그인 
@@ -183,6 +186,14 @@ public class LoginServiceImpl implements LoginService{
 	    }
 
 	    dao.addUser(accessTokenForDao, refreshTokenForDao, appUserIdForDao, nickNameForDao);
+	}
+	
+	/*
+	 * des : 프로필 조회.
+	 */
+	@Override
+	public List<User> getProfile(String id) {
+		return dao.getProfile(id);
 	}
 
 

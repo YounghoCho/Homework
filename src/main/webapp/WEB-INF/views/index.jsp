@@ -7,14 +7,35 @@
     <meta charset="utf-8"/>
 </head>
 
-<body>
-	<c:if test="${userId eq null}">
-		<a href="https://kauth.kakao.com/oauth/authorize?client_id=3203fb9b237c44cf427b37c2e3cb4319&redirect_uri=http://localhost:8080/oauth&response_type=code">
-			<img src="/image/kakao_login_large_wide.png">
-		</a>
-    </c:if>
-    <c:if test="${userId ne null}">
-        <h1>로그인 성공입니다</h1>
-    </c:if>
+<body onload=init(${userId})>
+	<div id="head"></div>
+	
+	<a href="">
+		<div style="border:1px solid black">로그아웃</div>
+	</a>
+	<div style="border:1px solid black">회원탈퇴</div>
+	<div style="border:1px solid black">내 정보 조회</div>
+	<div style="border:1px solid black">전체 사용자 조회</div>
 </body>
 </html>
+
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+function init(id){
+	$.ajax({
+		type : "GET",
+		url : "profile",
+		dataType : "json",
+		data : "id=" + id,
+		success : function(res){
+			let id = res.profile[0].appUserId;
+			let nickname = res.profile[0].nickname;
+			$('#head').append('<div>' + id +'</div>');
+			$('#head').append('<div>' + nickname +'</div>');
+		},
+		error : function(err){
+			alert(" AJAX error on index.jsp : " + err);
+		}
+	});
+}
+</script>

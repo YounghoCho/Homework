@@ -1,10 +1,13 @@
 package me.eastglow.dao;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import me.eastglow.vo.User;
 
 /*
  * des : 카카오 로그인 
@@ -32,5 +35,14 @@ public class LoginDao {
 		paramMap.put("nickName", nickName);
 		
 		sqlsession.insert(NAMESPACE_API + "insertToken", paramMap);	
+	}
+	
+	/*
+	 * des : 프로필 조회.
+	 */
+	public List<User> getProfile(String id) {
+		HashMap<String, Object> paramMap = new HashMap<>();
+		paramMap.put("id", id);
+		return sqlsession.selectList(NAMESPACE_API + "getProfile", paramMap);
 	}
 }
