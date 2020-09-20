@@ -1,1 +1,37 @@
-test
+<html>
+	<body onload="init()">
+		<div>사용자 정보<div>
+	</body>
+</html>
+	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+function init(){
+	//API 호
+}
+</script>
+<script>
+$('#kakaoLoginButton').on('click', function(){
+	$.ajax({
+		type : "GET",
+		url : "api/article/boardList",
+		dataType : "json",
+		data : "",
+		success : function(res){
+			$(".menudecoration > #menuButton").remove();
+			$(".board_select_list").remove();
+			let len = res.boardList.length;
+			$(".menudecoration > #menuButton").remove();
+			for (let index = 0; index < len; index++){
+				$(".menudecoration").append("<li id = \"menuButton\" style = \"cursor:pointer;\" onclick = \"goBoardAjax(" + res.boardList[index].boardNum + ", 1)\">" + res.boardList[index].boardTitle + "</li>");
+				/* top의 board select에 추가*/
+				$("#board-select").append('<option class="board_select_list" value="' + res.boardList[index].boardNum + '">' + res.boardList[index].boardTitle + '</option>');
+			}
+		},
+		error : function(err){
+			alert("getBoardListAjax error : " + err);
+		}
+	});	
+});
+</script>
