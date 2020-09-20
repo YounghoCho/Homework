@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+	/*
+	 * des : 카카오 로그인 
+	 */
+-->
+<mapper namespace="apiCall">
+
+	<select id="getAppUserId" parameterType="int" resultType="java.lang.Integer">
+		SELECT 
+			DISTINCT(APP_USER_ID)
+		FROM 
+			USER
+		WHERE
+			APP_USER_ID = #{appUserId}
+	</select>
+	<insert id="insertToken" parameterType="map">
+		INSERT
+	 	INTO
+	 		USER(APP_USER_ID, NICKNAME, ACCESS_TOKEN, REFRESH_TOKEN, CREATED_AT)
+		VALUES
+			(#{appUserId}, #{nickName}, #{accessToken}, #{refreshToken}, now())			  
+	</insert>
+	<!-- insert id="insertUser" parameterType="map">
+		INSERT
+	 	INTO
+	 		api_call(api_type, api_date)
+		VALUES
+			(#{apiType}, now())
+	</insert> -->
+</mapper>
