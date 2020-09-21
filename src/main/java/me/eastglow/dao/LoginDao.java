@@ -45,4 +45,10 @@ public class LoginDao {
 		paramMap.put("id", id);
 		return sqlsession.selectList(NAMESPACE_API + "getProfile", paramMap);
 	}
+
+	public void withdrawUser(int appUserId) {
+		HashMap<String, Object> paramMap = new HashMap<>();		
+		paramMap.put("appUserId", appUserId);		
+		sqlsession.insert(NAMESPACE_API + "withdrawUser", paramMap);	
+	}
 }

@@ -38,4 +38,17 @@
 		WHERE
 			APP_USER_ID = #{id}
 	</select>
+<!--
+	/*
+	 * des : 회원 탈퇴.
+	 */
+-->	
+	<delete id="withdrawUser" parameterType="map">
+		DELETE 
+		FROM 
+			USER
+		WHERE
+			APP_USER_ID = #{appUserId}
+	</delete>
+
 </mapper>

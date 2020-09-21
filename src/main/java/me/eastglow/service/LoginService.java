@@ -21,4 +21,8 @@ public interface LoginService {
 	 * des : 로그아웃.
 	 */
 	public void kakaoLogout(String accessToken);
+	/*
+	 * des : 회원탈퇴.
+	 */
+	public void withdrawUser(int appUserId);
 }

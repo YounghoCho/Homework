@@ -69,5 +69,13 @@ public class LoginController {
 	    session.removeAttribute("userId");
 	    return "home";
 	}
-	
+	/*
+	 * des : 탈퇴.
+	 */
+	@RequestMapping(value="/withdraw", method = RequestMethod.POST)
+	@ResponseBody
+	public int withdrawUser(HttpServletRequest req) throws Exception{
+		login.withdrawUser(Integer.parseInt(req.getParameter("appUserId")));
+		return 200;
+	}	
 }

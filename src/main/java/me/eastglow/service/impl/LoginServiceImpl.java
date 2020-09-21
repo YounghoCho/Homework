@@ -221,10 +221,13 @@ public class LoginServiceImpl implements LoginService{
 	    }
 		
 	}
-
-
-
-
+	/*
+	 * des :회원탈퇴.
+	 */
+	@Override
+	public void withdrawUser(int appUserId) {
+		dao.withdrawUser(appUserId);	
+	}
 
 }
 
