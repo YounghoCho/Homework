@@ -17,7 +17,7 @@ Kakao login
 
 
 +---------------+--------------+------+-----+---------+----------------+<br/>
-| Field         | Type         | Null | Key | Default | Extra          |<br/>
+| Field\t| Type         | Null | Key | Default | Extra          |<br/>
 +---------------+--------------+------+-----+---------+----------------+<br/>
 | ID            | smallint(6)  | NO   | PRI | NULL    | auto_increment |<br/>
 | app_user_id   | int(64)      | YES  |     | NULL    |                |<br/>
