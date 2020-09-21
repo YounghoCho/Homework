@@ -25,4 +25,10 @@ public class HomeController {
 		mv.setViewName("search");
 		return mv;
 	}
+	@RequestMapping(value="/person")
+	public ModelAndView goPerson() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("person");
+		return mv;
+	}
 }

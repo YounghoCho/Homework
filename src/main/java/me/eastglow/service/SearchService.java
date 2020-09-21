@@ -10,4 +10,11 @@ public interface SearchService {
 	 */
 	public List<User> searchAllUsers();
 	public List<User> searchUserbyNickname(String nickname);
+	/*
+	 * des : 개인 회원 조회.
+	 */	
+	public List<User> searchUserById(String appUserId);
+	
+	public void editUserInfo(String newNickname, String appUserId);
+	public void deleteUser(String appUserId);
 }

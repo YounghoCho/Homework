@@ -9,18 +9,14 @@ import org.springframework.stereotype.Repository;
 
 import me.eastglow.vo.User;
 
-/*
- * des : 전체 사용자 조회.
- */
 @Repository("SearchDao")
 public class SearchDao {
 	private static final String NAMESPACE_API = "apiCall.";
 
 	@Autowired
 	private SqlSessionTemplate sqlsession;
-	
 	/*
-	 * des : 프로필 조회.
+	 * des : 전체 사용자 조회.
 	 */
 	public List<User> searchAllUsers() {
 		return sqlsession.selectList(NAMESPACE_API + "searchAllUsers");
@@ -29,5 +25,24 @@ public class SearchDao {
 		HashMap<String, Object> paramMap = new HashMap<>();
 		paramMap.put("nickname", nickname);
 		return sqlsession.selectList(NAMESPACE_API + "searchUserbyNickname", paramMap);
+	}
+	/*
+	 * des : 개인 회원 조회.
+	 */	
+	public List<User> searchUserById(String appUserId) {
+		HashMap<String, Object> paramMap = new HashMap<>();
+		paramMap.put("appUserId", appUserId);
+		return sqlsession.selectList(NAMESPACE_API + "searchUserById", paramMap);
+	}	
+	public void editUserInfo(String newNickname, String appUserId) {
+		HashMap<String, Object> paramMap = new HashMap<>();		
+		paramMap.put("newNickname", newNickname);
+		paramMap.put("appUserId", appUserId);
+		sqlsession.insert(NAMESPACE_API + "editUserInfo", paramMap);	
+	}
+	public void deleteUser(String appUserId) {
+		HashMap<String, Object> paramMap = new HashMap<>();		
+		paramMap.put("appUserId", appUserId);
+		sqlsession.insert(NAMESPACE_API + "deleteUser", paramMap);	
 	}
 }

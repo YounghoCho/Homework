@@ -13,7 +13,7 @@
 	<div style="border:1px solid black" onclick="callLogout()">로그아웃</div>
 	<div style="border:1px solid black" onclick="callWithdraw(${userId})">회원탈퇴</div>
 	<div style="border:1px solid black" onclick="callSearch()">회원 조회</div>
-	<div style="border:1px solid black">개인 회원 관리</div>
+	<div style="border:1px solid black" onclick="callPerson()">개인 회원 관리</div>
 </body>
 </html>
 
@@ -63,5 +63,8 @@ function callWithdraw(appUserId){
 
 function callSearch(){
 	location.href="/search";
+}
+function callPerson(){
+	location.href="/person";
 }
 </script>

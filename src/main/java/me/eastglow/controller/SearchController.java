@@ -19,7 +19,7 @@ public class SearchController {
 	@Autowired
 	private SearchServiceImpl search;
 	/*
-	 * des : 전체 유저 검색.
+	 * des : 전체 유저 조회.
 	 */
 	@RequestMapping(value="/users", method = RequestMethod.GET)
 	@ResponseBody
@@ -30,5 +30,26 @@ public class SearchController {
 	@ResponseBody
 	public List<User> searchUserbyNickname(@RequestParam("nickname") String nickname) throws Exception{
 		return search.searchUserbyNickname(nickname);
+	}
+	/*
+	 * des : 개인 회원 조회.
+	 */
+	@RequestMapping(value="/user", method = RequestMethod.GET)
+	@ResponseBody
+	public List<User> searchUserById(@RequestParam("appUserId") String appUserId) throws Exception{
+		return search.searchUserById(appUserId);
+	}
+	@RequestMapping(value="/user", method = RequestMethod.PUT)
+	@ResponseBody
+	public int editUserInfo(@RequestParam("newNickname") String newNickname,
+			@RequestParam("appUserId") String appUserId) throws Exception{
+		 search.editUserInfo(newNickname, appUserId);
+		 return 200;
+	}
+	@RequestMapping(value="/user", method = RequestMethod.DELETE)
+	@ResponseBody
+	public int deleteUser(@RequestParam("appUserId") String appUserId) throws Exception{
+		 search.deleteUser(appUserId);
+		 return 200;
 	}
 }

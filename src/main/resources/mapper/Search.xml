@@ -4,7 +4,11 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
 <mapper namespace="apiCall">
-
+<!--
+	/*
+	 * des : 전체 사용자 조회.
+	 */	
+-->
 	<select id="searchAllUsers" resultType="me.eastglow.vo.User">
 		SELECT 
 			APP_USER_ID, NICKNAME, CREATED_AT
@@ -19,5 +23,32 @@
 		WHERE
 			NICKNAME = #{nickname}
 	</select>	
-
+<!--
+	/*
+	 * des : 개인 회원 조회.
+	 */	
+-->
+	<select id="searchUserById" parameterType="map" resultType="me.eastglow.vo.User">
+		SELECT 
+			APP_USER_ID, NICKNAME, CREATED_AT
+		FROM 
+			USER
+		WHERE
+			APP_USER_ID = #{appUserId}
+	</select>	
+	<insert id="editUserInfo" parameterType="map">
+		UPDATE
+			USER
+		SET
+			NICKNAME = #{newNickname}
+	 	WHERE
+	 		APP_USER_ID = #{appUserId}
+	</insert>
+	<delete id="deleteUser" parameterType="map">
+		DELETE
+		FROM
+			USER
+	 	WHERE
+	 		APP_USER_ID = #{appUserId}
+	</delete>
 </mapper>
