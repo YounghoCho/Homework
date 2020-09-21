@@ -17,4 +17,8 @@ public interface LoginService {
 	 * des : 프로필 조회.
 	 */
 	public List<User> getProfile(String id);
+	/*
+	 * des : 로그아웃.
+	 */
+	public void kakaoLogout(String accessToken);
 }

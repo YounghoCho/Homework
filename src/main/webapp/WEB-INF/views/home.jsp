@@ -14,7 +14,13 @@
 		</a>
     </c:if>
     <c:if test="${userId ne null}">
-        <h1>로그인 성공입니다</h1>
+	    로그인 성공!
+        <div onClick="test()" style="border:1px solid #666;width:200px;">관리자 페이지로 이동.</div>
     </c:if>
 </body>
 </html>
+<script>
+function test(){
+	location.href="/user";
+}
+</script>

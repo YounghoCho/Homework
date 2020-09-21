@@ -10,7 +10,13 @@ public class HomeController {
 	@RequestMapping(value="/")
 	public ModelAndView goHome() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index");
+		mv.setViewName("home");
+		return mv;
+	}
+	@RequestMapping(value="/user")
+	public ModelAndView goUser() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user");
 		return mv;
 	}
 }

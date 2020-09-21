@@ -58,5 +58,16 @@ public class LoginController {
 		result.put("profile", login.getProfile(req.getParameter("id")));
 		return result;	
 	}
+	/*
+	 * des : 로그아웃.
+	 */
+	@RequestMapping(value="/logout")
+	public String logout(HttpSession session) {
+	    System.out.println("accessToken :" + (String)session.getAttribute("accessToken"));
+	    login.kakaoLogout((String)session.getAttribute("accessToken"));
+	    session.removeAttribute("accessToken");
+	    session.removeAttribute("userId");
+	    return "home";
+	}
 	
 }
