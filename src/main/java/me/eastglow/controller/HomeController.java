@@ -19,4 +19,10 @@ public class HomeController {
 		mv.setViewName("user");
 		return mv;
 	}
+	@RequestMapping(value="/search")
+	public ModelAndView goSearch() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("search");
+		return mv;
+	}
 }

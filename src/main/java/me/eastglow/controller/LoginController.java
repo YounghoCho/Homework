@@ -44,7 +44,7 @@ public class LoginController {
     	//세션 등록
     	session.setAttribute("userId", appUserId);
     	session.setAttribute("accessToken", accessToken);
-    	return "home";
+    	return "user";
 	}
 	
 	/*

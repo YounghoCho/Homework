@@ -10,10 +10,10 @@
 <body onload=init(${userId})>
 	<div id="head"></div>
 	
-	<div style="border:1px solid black" onclick="logout()">로그아웃</div>
-	<div style="border:1px solid black" onclick="withdraw(${userId})">회원탈퇴</div>
-	<div style="border:1px solid black">내 정보 조회</div>
-	<div style="border:1px solid black">전체 사용자 조회</div>
+	<div style="border:1px solid black" onclick="callLogout()">로그아웃</div>
+	<div style="border:1px solid black" onclick="callWithdraw(${userId})">회원탈퇴</div>
+	<div style="border:1px solid black" onclick="callSearch()">회원 조회</div>
+	<div style="border:1px solid black">개인 회원 관리</div>
 </body>
 </html>
 
@@ -39,12 +39,12 @@ function init(id){
 	});
 }
 
-function logout(){
+function callLogout(){
 	location.href="/logout";
 }
 
-function withdraw(appUserId){
-		$.ajax({
+function callWithdraw(appUserId){
+	$.ajax({
 		type : "POST",
 		url : "withdraw",
 		dataType : "json",
@@ -59,5 +59,9 @@ function withdraw(appUserId){
 			alert("error line56 in index.js  : " + err);
 		}
 	});
+}
+
+function callSearch(){
+	location.href="/search";
 }
 </script>

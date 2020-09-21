@@ -33,7 +33,7 @@ public class LoginServiceImpl implements LoginService{
 	private String nickNameForDao;	
 	
 	/*
-	 * des : 최초 접속시 kakao로부터 받아온 code로 토큰을 받아온.
+	 * des : 최초 접속시 kakao로부터 받아온 code로 토큰을 받아온다.
 	 */
 	@Override
 	public String getToken(String authorizCode) throws Exception {
