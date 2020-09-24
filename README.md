@@ -1,21 +1,25 @@
 # HOMEWORK
 A user management service development using Kakao login API.
 <br/>
+<br/>
+<br/>
 
 ## Summary 
-<ol>1. Development environment</ol>
-	<ul>JSP, Jquery, Springbootv2.3.4, MySQLv5.7.31</ul>
-	<ul>HOST : locahost</ul>
-	<ul>OS : MAC</ul>
+<ol><em>1. Development environment</em></ol>
+	<ul>	JSP, Jquery, Springbootv2.3.4, MySQLv5.7.31</ul>
+	<ul>	HOST : locahost</ul>
+	<ul>	OS : MAC</ul>
 <ol>2. REST API</ol>
 <ol>3. Problem solving strategy</ol>
 <ol>4. How to build and run the project</ol>
-
 <br/>
+<br/>
+<br/>
+
 ## REST API
 <em> User Login </em>
 URL | Description | Prameters
----|:---|:---
+:---|:---|:---
 `GET /oauth` | Receive a verification code from Kakao  | `code`
 `GET /profile` | Get my profile | 'accessToken'
 `POST /logout` | Logout | 'accessToken, userId'
@@ -23,7 +27,7 @@ URL | Description | Prameters
 
 <em> User Management </em>
 URL | Description | Prameters
----|:---|:---
+:---|:---|:---
 `GET /api/users` | Get all users | `code`
 `GET /api/users/{nickname}` | Search a specific user | 'nickname'
 `GET /api/user/{appUserId}` | Search a user by id | 'appUserId'
