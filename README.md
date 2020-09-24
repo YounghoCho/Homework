@@ -16,7 +16,7 @@ A user management service development using Kakao login API.
 <br/>
 
 
-## REST API
+## REST API Description
 <strong>User Login</strong>
 URL | Description | Prameters
 :---|:---|:---
@@ -26,6 +26,7 @@ URL | Description | Prameters
 `POST /withdraw` | Withdraw user | 'userId'
 
 <br/>
+
 <strong>User Management</strong>
 URL | Description | Prameters
 :---|:---|:---
@@ -48,7 +49,7 @@ URL | Description | Prameters
 
 <li><strong>User Management</strong></li>
 <ul>사용자 관리는 전체 사용자 검색과 개인 사용자 관리로 구분한다.</ul>
-</ul>REST API 개발 요건에 맞게 API를 구현한다.</ul>
+<ul>REST API 개발 요건에 맞게 API를 구현한다.</ul>
 
 <li><strong>Collecting HTTP Logs</strong></li>
 <ul>Servlet Filter를 사용하여 사용자의 HTTP 요청과 응답을 기록한다.</ul>
