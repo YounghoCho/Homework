@@ -89,6 +89,7 @@ public class LoginServiceImpl implements LoginService{
 			refreshTokenForDao = refreshToken;
 		    
 		} catch (IOException e) {
+			System.out.println("catch IOException getToken() in LoginServiceImple.java");
 		    e.printStackTrace();
 		} 
 		
@@ -132,6 +133,7 @@ public class LoginServiceImpl implements LoginService{
 			    nickNameForDao = nickname;
 		        
 		    } catch (IOException e) {
+				System.out.println("catch IOException getUser() in LoginServiceImple.java");
 		        e.printStackTrace();
 		    }
 		    return appUserIdForDao;
@@ -182,6 +184,7 @@ public class LoginServiceImpl implements LoginService{
 		    nickNameForDao = nickname;
 	        
 	    } catch (IOException e) {
+			System.out.println("catch IOException addUser() in LoginServiceImple.java");
 	        e.printStackTrace();
 	    }
 
@@ -217,6 +220,7 @@ public class LoginServiceImpl implements LoginService{
 	        }
 	        System.out.println(result);
 	    } catch (IOException e) {
+			System.out.println("catch IOException getProfile() in LoginServiceImple.java");
 	        e.printStackTrace();
 	    }
 		

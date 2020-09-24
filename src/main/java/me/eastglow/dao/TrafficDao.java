@@ -12,7 +12,9 @@ public class TrafficDao {
 	
 	@Autowired
 	private SqlSessionTemplate sqlsession;
-	
+	/*
+	 * des : 필에서 수집한 HTTP request & body 기록.
+	 */
 	public void insertTraffic(String request, String response) {
 		HashMap<String, Object> paramMap = new HashMap<>();		
 		paramMap.put("request", request);

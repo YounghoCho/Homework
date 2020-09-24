@@ -39,6 +39,9 @@ public class SearchController {
 	public List<User> searchUserById(@RequestParam("appUserId") String appUserId) throws Exception{
 		return search.searchUserById(appUserId);
 	}
+	/*
+	 * des : 개인 회원 수정.
+	 */
 	@RequestMapping(value="/user", method = RequestMethod.PUT)
 	@ResponseBody
 	public int editUserInfo(@RequestParam("newNickname") String newNickname,
@@ -46,6 +49,9 @@ public class SearchController {
 		 search.editUserInfo(newNickname, appUserId);
 		 return 200;
 	}
+	/*
+	 * des : 개인 회원 삭제.
+	 */
 	@RequestMapping(value="/user", method = RequestMethod.DELETE)
 	@ResponseBody
 	public int deleteUser(@RequestParam("appUserId") String appUserId) throws Exception{

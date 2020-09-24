@@ -21,25 +21,35 @@ public class SearchDao {
 	public List<User> searchAllUsers() {
 		return sqlsession.selectList(NAMESPACE_API + "searchAllUsers");
 	}
+	/*
+	 * des : 닉네임으로 사용자 조회.
+	 */
 	public List<User> searchUserbyNickname(String nickname) {
 		HashMap<String, Object> paramMap = new HashMap<>();
 		paramMap.put("nickname", nickname);
 		return sqlsession.selectList(NAMESPACE_API + "searchUserbyNickname", paramMap);
 	}
+	
 	/*
-	 * des : 개인 회원 조회.
+	 * des : ID로 개인 회원 조회.
 	 */	
 	public List<User> searchUserById(String appUserId) {
 		HashMap<String, Object> paramMap = new HashMap<>();
 		paramMap.put("appUserId", appUserId);
 		return sqlsession.selectList(NAMESPACE_API + "searchUserById", paramMap);
 	}	
+	/*
+	 * des : 개인 회원정보 수정.
+	 */
 	public void editUserInfo(String newNickname, String appUserId) {
 		HashMap<String, Object> paramMap = new HashMap<>();		
 		paramMap.put("newNickname", newNickname);
 		paramMap.put("appUserId", appUserId);
 		sqlsession.insert(NAMESPACE_API + "editUserInfo", paramMap);	
 	}
+	/*
+	 * des : 개인회원 제명.
+	 */
 	public void deleteUser(String appUserId) {
 		HashMap<String, Object> paramMap = new HashMap<>();		
 		paramMap.put("appUserId", appUserId);

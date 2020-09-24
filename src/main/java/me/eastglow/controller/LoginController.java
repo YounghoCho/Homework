@@ -70,7 +70,7 @@ public class LoginController {
 	    return "home";
 	}
 	/*
-	 * des : 탈퇴.
+	 * des : 회원탈퇴.
 	 */
 	@RequestMapping(value="/withdraw", method = RequestMethod.POST)
 	@ResponseBody

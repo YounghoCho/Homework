@@ -27,7 +27,7 @@ public class SimpleFilter implements Filter {
 	
     @Override
     public void destroy() {
-    	System.out.println("Filter Destroyed");
+    	System.out.println("===Filter Destroyed===");
 	}
 
     @Override 
@@ -43,14 +43,14 @@ public class SimpleFilter implements Filter {
        Map<String, Object> responseMap = LoggingUtil.makeLoggingResponseMap(response);
        ((ResponseWrapper) response).copyBodyToResponse();
 
-       System.out.println("REQUEST :" + requestMap.toString());
-       System.out.println("RESPONSE :" + responseMap.toString());
+       System.out.println("Filtered REQUEST :" + requestMap.toString());
+       System.out.println("Filtered RESPONSE :" + responseMap.toString());
 
        dao.insertTraffic(requestMap.toString(), responseMap.toString());
    }
 
    @Override
    public void init(FilterConfig filterconfig) throws ServletException {
-	   System.out.println("Filter Initiatied");
+	   System.out.println("===Filter Initiatied===");
    }
 }

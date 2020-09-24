@@ -14,7 +14,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class RequestWrapper extends HttpServletRequestWrapper {
  
     private ObjectMapper objectMapper;
- 
     private byte[] httpRequestBodyByteArray;
     private ByteArrayInputStream bis;
  
@@ -26,7 +25,7 @@ public class RequestWrapper extends HttpServletRequestWrapper {
             this.httpRequestBodyByteArray = StreamUtils.copyToByteArray(request.getInputStream());
             this.bis = new ByteArrayInputStream(httpRequestBodyByteArray);
         } catch (IOException e) {
-//            System.out.println(e);
+            System.out.println("RequestWrapper.java Error" + e);
         }
  
     }

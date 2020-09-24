@@ -18,7 +18,9 @@ public class LoginDao {
 
 	@Autowired
 	private SqlSessionTemplate sqlsession;
-	
+	/*
+	 * des : 유저 가입 여부 검사. 
+	 */
 	public int getAppUserId(int appUserId) {
 		if(sqlsession.selectOne(NAMESPACE_API + "getAppUserId", appUserId) == null) {
 			return 0;
@@ -26,7 +28,9 @@ public class LoginDao {
 			return sqlsession.selectOne(NAMESPACE_API + "getAppUserId", appUserId);
 		}	
 	}
-	
+	/*
+	 * des : 유저 신규 가입.
+	 */
 	public void addUser(String accessToken, String refreshToken, int appUserId, String nickName) {
 		HashMap<String, Object> paramMap = new HashMap<>();		
 		paramMap.put("accessToken", accessToken);
@@ -45,7 +49,9 @@ public class LoginDao {
 		paramMap.put("id", id);
 		return sqlsession.selectList(NAMESPACE_API + "getProfile", paramMap);
 	}
-
+	/*
+	 * des : 회원 탈퇴.
+	 */
 	public void withdrawUser(int appUserId) {
 		HashMap<String, Object> paramMap = new HashMap<>();		
 		paramMap.put("appUserId", appUserId);		

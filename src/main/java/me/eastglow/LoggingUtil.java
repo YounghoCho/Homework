@@ -32,11 +32,11 @@ public class LoggingUtil {
  
         // request Body
         try {
-            // 이부분 주목!!
+            //Wrapper로 감싼다.
             Object requestBody = ((RequestWrapper) request).convertToObject();
             requestMap.put("body", requestBody);
         } catch (IOException iex) {
-//            System.out.println(iex);
+            System.out.println("iex error in LoggingUtil.java" + iex);
 
         }
  
@@ -56,14 +56,13 @@ public class LoggingUtil {
  
         // response body
         try {
-            // 이부분 주목!!
+        	//Wrapper로 감싼다.
             Object responseBody = ((ResponseWrapper) response).convertToObject();
             responseMap.put("body", responseBody);
         } catch (IOException ioe) {
-//            System.out.println(ioe);
+            System.out.println("ioe error in LoggingUtil.java" +ioe);
 
         }
- 
         return responseMap;
     }
 }

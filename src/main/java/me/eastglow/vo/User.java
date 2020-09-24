@@ -15,6 +15,7 @@ public class User {
 	private String acessToken;
 	private String refreshToken;
 	private Date createdAt;
+	
 	public int getAppUserId() {
 		return appUserId;
 	}
