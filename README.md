@@ -2,19 +2,20 @@
 A user management service development using Kakao login API.
 <br/>
 <br/>
-<br/>
 
 ## Summary 
-<ol><em>1. Development environment</em></ol>
-	<ul>	JSP, Jquery, Springbootv2.3.4, MySQLv5.7.31</ul>
-	<ul>	HOST : locahost</ul>
-	<ul>	OS : MAC</ul>
-<ol>2. REST API</ol>
-<ol>3. Problem solving strategy</ol>
-<ol>4. How to build and run the project</ol>
+<ol>
+<li><em>1. Development environment</em></li>
+	<ul>	- JSP, Jquery, Springbootv2.3.4, MySQLv5.7.31</ul>
+	<ul>	- HOST : locahost</ul>
+	<ul>	- OS : MAC</ul>
+<li>REST API</li>
+<li>Problem solving strategy</li>
+<li>How to build and run the project</li>
+</ol>
 <br/>
 <br/>
-<br/>
+
 
 ## REST API
 <em> User Login </em>
